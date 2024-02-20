@@ -2,9 +2,9 @@
 plugins {
 	alias(libs.plugins.android.application)
 	alias(libs.plugins.android.kotlin)
+	alias(libs.plugins.kapt)
 	alias(libs.plugins.hilt)
-
-	id("kotlin-kapt")
+	alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -66,6 +66,9 @@ dependencies {
 
 	implementation(libs.bundles.hilt)
 	kapt(libs.bundles.hilt.compiler)
+
+	implementation(libs.bundles.network)
+	implementation(libs.bundles.json.parser)
 
 	testImplementation(libs.bundles.test)
 	androidTestImplementation(libs.bundles.android.test)

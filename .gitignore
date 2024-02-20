@@ -17,6 +17,5 @@ local.properties
 /.idea/compiler.xml
 /.idea/gradle.xml
 /.idea/kotlinc.xml
-/gradle/libs.versions.toml
 /.idea/misc.xml
 /.idea/vcs.xml

@@ -1,0 +1,103 @@
+[versions]
+# SDK
+compileSdk = "34"
+minSdk = "26"
+targetSdk = "34"
+versionCode = "1"
+versionName = "1.0"
+jvmTarget = "17"
+kotlinCompilerExtensionVersion = "1.4.3"
+
+# android
+android-gradle-plugin = "8.2.2"
+android-kotlin = "1.8.10"
+
+# Hilt
+hilt = "2.48"
+
+# Android Library
+ktx = "1.9.0"
+lifecycle-runtime = "2.7.0"
+
+# Compose Library
+compose = "2024.02.00"
+activity-compose = "1.8.2"
+navigation-compose = "2.7.7"
+
+# Network
+retrofit = "2.9.0"
+okhttp = "4.11.0"
+
+# Json Parser
+kotlinx-serialization-plugin = "1.8.10"
+kotlinx-serialization = "1.6.3"
+kotlinx-serialization-converter = "1.0.0"
+
+# test
+junit = "4.13.2"
+test-ext-junit = "1.1.5"
+test-espresso-core = "3.5.1"
+
+[libraries]
+# Android Library
+androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+androidx-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime" }
+
+# Compose Library
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-material = { group = "androidx.compose.material", name = "material" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose" }
+
+# Hilt
+hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
+# Network
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+# Json Parser
+kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "kotlinx-serialization-converter" }
+
+# Android Test
+junit = { group = "junit", name = "junit", version.ref = "junit"}
+test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "test-ext-junit" }
+test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "test-espresso-core" }
+
+# Compose Test
+compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "android-kotlin" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "android-kotlin"}
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinx-serialization-plugin" }
+
+[bundles]
+android-library = ["androidx-ktx", "androidx-lifecycle"]
+compose-library = ["activity-compose", "compose-ui", "compose-ui-graphics", "compose-ui-tooling-preview", "compose-material", "compose-material3", "navigation-compose"]
+
+hilt = ["hilt"]
+hilt-compiler = ["hilt-compiler", "hilt-android-compiler"]
+
+network = ["retrofit", "retrofit-converter-moshi", "okhttp", "okhttp-logging-interceptor"]
+json-parser = ["kotlinx-serialization", "kotlinx-serialization-converter"]
+
+test = ["junit"]
+android-test = ["test-ext-junit", "test-espresso-core"]
+android-compose-test = ["compose-ui-test-junit4"]
+
+compose-debug = ["compose-ui-tooling", "compose-ui-test-manifest"]
