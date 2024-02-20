@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LiamFlix</string>
+
+    <string name="home">홈</string>
+    <string name="rating">평가</string>
+    <string name="profile">프로필</string>
 </resources>
