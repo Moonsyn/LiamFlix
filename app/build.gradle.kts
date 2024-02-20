@@ -2,6 +2,9 @@
 plugins {
 	alias(libs.plugins.android.application)
 	alias(libs.plugins.android.kotlin)
+	alias(libs.plugins.hilt)
+
+	id("kotlin-kapt")
 }
 
 android {
@@ -50,11 +53,19 @@ android {
 	}
 }
 
+// Allow references to generated code
+kapt {
+	correctErrorTypes = true
+}
+
 dependencies {
 	implementation(libs.bundles.android.library)
 
 	implementation(platform(libs.compose.bom))
 	implementation(libs.bundles.compose.library)
+
+	implementation(libs.bundles.hilt)
+	kapt(libs.bundles.hilt.compiler)
 
 	testImplementation(libs.bundles.test)
 	androidTestImplementation(libs.bundles.android.test)
