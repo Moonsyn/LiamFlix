@@ -50,7 +50,7 @@ fun LiamFlixApp() {
         Box(modifier = Modifier.padding(it)) {
             LiamNavHost(
                 navController = navController,
-                startDestination = LiamScreens.Home.name
+                startDestination = LiamScreens.Sample.name
             )
         }
     }

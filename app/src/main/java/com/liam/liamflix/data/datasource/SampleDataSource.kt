@@ -2,5 +2,5 @@ package com.liam.liamflix.data.datasource
 
 interface SampleDataSource {
 
-	fun sample(): Result<Boolean>
+	suspend fun sample(number: Int): Result<Int>
 }

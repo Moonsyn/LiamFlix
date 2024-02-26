@@ -4,7 +4,7 @@ import javax.inject.Inject
 
 class SampleDataSourceImpl @Inject constructor(): SampleDataSource {
 
-	override fun sample(): Result<Boolean> {
-		TODO("Not yet implemented")
+	override suspend fun sample(number: Int): Result<Int> {
+		return Result.success(number+1)
 	}
 }

@@ -7,5 +7,5 @@ class SampleUseCase @Inject constructor(
     private val sampleRepository: SampleRepository
 ) {
 
-    operator fun invoke() = sampleRepository.sample()
+    suspend operator fun invoke(number: Int) = sampleRepository.sample(number)
 }

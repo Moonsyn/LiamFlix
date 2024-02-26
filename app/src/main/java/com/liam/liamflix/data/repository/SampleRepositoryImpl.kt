@@ -8,7 +8,7 @@ class SampleRepositoryImpl @Inject constructor(
 	private val sampleDataSource: SampleDataSource
 ): SampleRepository {
 
-	override fun sample(): Result<Boolean> {
-		return sampleDataSource.sample()
+	override suspend fun sample(number: Int): Result<Int> {
+		return sampleDataSource.sample(number)
 	}
 }

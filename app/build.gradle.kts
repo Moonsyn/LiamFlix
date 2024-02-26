@@ -67,6 +67,9 @@ dependencies {
 	implementation(libs.bundles.hilt)
 	kapt(libs.bundles.hilt.compiler)
 
+	implementation(libs.bundles.orbit)
+	testImplementation(libs.bundles.orbit.test)
+
 	implementation(libs.bundles.network)
 	implementation(libs.bundles.json.parser)
 
